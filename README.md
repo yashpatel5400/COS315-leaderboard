@@ -1,111 +1,30 @@
-# Flask Leaderboard
-Make simple leaderboard for machine learning competition using Flask
+## STATS 315 / DATA SCI 315 Leaderboard
 
-# How to Use This Apps
-There are two role: [admin](#How-to-Use-it-as-an-Admin) and [user](#How-to-Use-it-as-an-User) 
+This is an introductory deep learning course using the Python programming language and the TensorFlow deep learning library. The core course website is available at: https://github.com/ambujtewari/stats315-winter2022. This is the accompanying repository for lab submissions. Note that there should be little here of relevance to students, although future instructors of this course may find documentation in this repo useful.
 
-Admin is able to: 
-- See Public & Private Leaderboard
-- Create, read, update, delete (CRUD) Users & Submissions
+- **Undergraduate Courses on Deep Learning**: Many universities now offer an introductory deep learning course, e.g., [Berkeley](https://c.d2l.ai/berkeley-stat-157/), [CMU](https://deeplearning.cs.cmu.edu/), [MIT](http://introtodeeplearning.com/), [Stanford](https://cs230.stanford.edu/)
+- **Canvas**: You should access the [Canvas class page](https://umich.instructure.com/courses/516592) for this course frequently. It will let you access important announcements and track course deliverables. (requires UM login)
+- **Slack**: The course slack workspace is at [um-wn22-stats315.slack.com](https://um-wn22-stats315.slack.com) (requires UM login)
+- **Days and Times**: Tuesdays and Thursdays, 10-11:30
+- **Location**: [B1580 BUS](https://maps.studentlife.umich.edu/building/jeff-t-blau-hall)
 
-The Flask Leaderboard repo enable users to:
-- See Public Leaderboard 
-- Login & Register User
-- Public & Private Submission
+## Instructor Information
 
-First, setting up the admin 
+**Name**: Ambuj Tewari  
+**Office Hours**: TBD    
+**Email**: [tewaria@umich.edu](mailto:tewaria@umich.edu)
 
-## How to Use it as an Admin
-- [Clone and Install](#clone-and-install)
-- [Insert Master Key](#insert-master-key)
-- [Change Scoring Method](#change-scoring-method)
-- [Run Flask App](#run-flask-app)
-- [Make Admin Account](#make-admin-account)
-- [Reset All](#reset-all)
+## GSI Information
 
-### Clone and Install
-Clone the repo using `git clone https://github.com/vindruid/flask_leaderboard.git` 
-<br>
-Then install the package with the version `pip install -r requirements.txt`
+**Name**: Yash Patel   
+**Lab Webpage**: TBD   
+**Email**: [yppatel@umich.edu](mailto:yppatel@umich.edu)
 
-### Insert Master Key
-Put your key inside folder `master_key` with name  `public_key.csv` and `private_key.csv`
-<br>
-with column `data_id` and `prediction`
-<br>
-for example 
-```
-data_id,prediction
-1,5
-2,4
-3,4.1
-4,9
-5,6.8
-```
+**Name**: Vinod Raman  
+**Lab Webpage**: TBD    
+**Email**: [vkraman@umich.edu](mailto:vkraman@umich.edu)
 
-### Change Scoring Method
-open `main.py`
-#### change `greater_better` parameter 
-```python
-greater_better = True
-```
-if greatest score is the best (i.e. Accuracy, R2 Score) 
+## Academic Integrity
 
-```python
-greater_better = False
-```
-if lowest score is the best (i.e. Mean Square Error, log loss)
-
-#### change `metric` parameter
-Using [scikit learn metrics](https://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics) 
-<br>
-for example
-```python
-from sklearn.metrics import mean_squared_error
-
-metric = mean_squared_error
-```
-Ensure the metric you choose align with the `greater_better` parameter
-
-### Run Flask App
-in your terminal, run `python main.py` <br>
-Then you will see a page open in your browser with url `http://localhost:5005/`
-
-### Make Admin account
-Go to register page `http://localhost:5005/register` or click register button at the top left <br> 
-Then perserve `admin` username, the `password` is up to you. <br>
-You can go to `http://localhost:5005/admin` by login with `admin` username. <br>
-At that page, you can manage users and submissions (create, read, update, and delete)
-
-*If you forgot your admin password* 
-run `python query.py` and it will print all submission and username with password 
-
-### Reset All
-If you intent to remove all user and submission. <br>
-just delete `app.db` file
-
-## How to Use it as an User
-- [Connect to leaderboard](connect-to-leaderboard)
-- [Register](#register)
-- [Login](#login)
-- [Submit](#submit)
-
-### Connect to leaderboard
-Go to `http://localhost:5005/`
-
-### Register
-Go to register page `http://localhost:5005/register` or click register button at the top left <br> 
-Add your `username` and `password` then click register
-
-### Login
-Go back to home page `http://localhost:5005/` or click home button <br> 
-Put your registered `username` and `password` then login <br> 
-If you forget your password, please contact admin or register new account
-
-### Submit
-Submission menu will be appeared if you already login <br>
-Choose your submission type (`public` or `private`) <br>
-Click choose file button and select your file then click upload
-
-Ensure your file extension is `.csv` and the file has 2 columns `data_id` & `prediction` with `data_id` according to admin instruction (should match with master key
+The University of Michigan community functions best when its members treat one another with honesty, fairness, respect, and trust. The college promotes the assumption of personal responsibility and integrity, and prohibits all forms of academic dishonesty and misconduct. All cases of academic misconduct will be referred to the LSA Office of the Assistant Dean for Undergraduate Education. Being found responsible for academic misconduct will usually result in a grade sanction, in addition to any sanction from the college. For more information, including examples of behaviors that are considered academic misconduct and potential sanctions, please see [https://lsa.umich.edu/lsa/academics/academic-integrity.html](https://lsa.umich.edu/lsa/academics/academic-integrity.html)
 
