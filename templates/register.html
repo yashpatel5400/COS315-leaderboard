@@ -17,7 +17,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="/">Leader Board</a>
+        <a class="navbar-brand" href="/">STATS 315</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,12 +25,6 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('register_page') }}">Register</a>
-                </li>
             </ul>
         </div>
     </nav>
@@ -38,8 +32,7 @@
     <br />
     <div class="jumbotron" style="background:#1f6794;color:#fff">
         <div class="container">
-            <h2 class="display-3">Registration Form</h2>
-
+            <h3>Register</h3>
             <form class="form-inline my-2 my-lg-0" method="POST" action="/register" style="color:#fff" novalidate>
                 {{ reg_form.hidden_tag() }}
                 <div class="col">
