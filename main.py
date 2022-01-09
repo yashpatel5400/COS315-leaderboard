@@ -142,6 +142,7 @@ def get_leaderboard(greater_better, limit, submission_type = 'public'):
             # """
     df = pd.read_sql(query, 
                     db.session.bind)
+    print(df)
     return df
 
 # Route
