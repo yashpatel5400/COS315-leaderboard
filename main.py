@@ -126,19 +126,20 @@ def get_leaderboard(greater_better, limit, submission_type = 'public'):
         score_agg = "MIN"
         score_sorting = "ASC"
 
-    query = f"""
-            SELECT user, 
-            {score_agg}(submission.score) as score,
-            count(submission.id) as total_submission,
-            max(timestamp) as last_sub
-            FROM submission 
-            LEFT JOIN user 
-            ON user.id = submission.user_id
-            WHERE submission_type = '{submission_type}'
-            GROUP BY 1 
-            ORDER BY 2 {score_sorting}, 4
-            LIMIT {limit}
-            """
+    query = "SELECT username"
+            # f"""
+            # SELECT user.username, 
+            # {score_agg}(submission.score) as score,
+            # count(submission.id) as total_submission,
+            # max(timestamp) as last_sub
+            # FROM submission 
+            # LEFT JOIN user 
+            # ON user.id = submission.user_id
+            # WHERE submission_type = '{submission_type}'
+            # GROUP BY 1 
+            # ORDER BY 2 {score_sorting}, 4
+            # LIMIT {limit}
+            # """
     df = pd.read_sql(query, 
                     db.session.bind)
     return df
