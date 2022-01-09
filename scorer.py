@@ -35,7 +35,7 @@ class Scorer():
         y = df.values[:,2]
         y_hat = model.predict(X)
 
-        score = sklearn.metrics.r2_score(y, y_hat)
+        score = mean_squared_error(y, y_hat)
 
         # if y_submission.isna().sum() > 0:
         #     return ("SUBMISSION HAS NULL VALUE", None)
