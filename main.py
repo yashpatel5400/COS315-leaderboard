@@ -114,9 +114,6 @@ admin = Admin(app, index_view=MyAdminIndexView())
 admin.add_view(UserView(User, db.session))
 admin.add_view(SubmissionView(Submission, db.session))
 
-db.session.query(Submission).delete()
-db.session.commit()
-
 # Leader Board
 def get_leaderboard(greater_better, limit, submission_type = 'public'):
 
