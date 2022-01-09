@@ -27,7 +27,7 @@ class Scorer():
             urllib.request.urlretrieve(dataset_url, test_fn)
 
         # load dataset into numpy
-        df = pd.read_csv("air_quality.csv", sep=";",header=0, decimal=',')
+        df = pd.read_csv(test_fn, sep=";",header=0, decimal=',')
         df = df[df["Date"] == df["Date"]]
 
         X = df.values[:,3:-2]
