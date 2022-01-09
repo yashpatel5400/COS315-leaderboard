@@ -127,8 +127,7 @@ def get_leaderboard(greater_better, limit, submission_type = 'public'):
         score_sorting = "ASC"
 
     query = f"""
-            SELECT
-            user.username, 
+            SELECT user.username, 
             {score_agg}(submission.score) as score,
             count(submission.id) as total_submission,
             max(timestamp) as last_sub
