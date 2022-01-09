@@ -30,7 +30,7 @@ scorer = Scorer(public_path = './master_key/public_key.csv',
 
 ## Upload parameter
 UPLOAD_FOLDER = 'submissions'
-ALLOWED_EXTENSIONS = {'csv'} # only accept csv files
+ALLOWED_EXTENSIONS = {'pkl'} # only accept csv files
 
 ## FLASK configuration
 app = Flask(__name__)
@@ -258,5 +258,5 @@ def home_page():
 
 if __name__ == '__main__':
     app.debug = True
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 8080))
     app.run(host = '0.0.0.0', port=port)
